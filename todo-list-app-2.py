@@ -21,7 +21,7 @@ def menu():
         elif choice == '4':
             suggest_tasks()
         elif choice == '5':
-            print("Good Bye.")
+            print("Exiting the application. Good Bye!")
             break
         else:
             print("Invalid choice. Please select a valid option (1-5).\n")
