@@ -1,5 +1,14 @@
 #Startting the application:
 # Function to display the menu and prompt the user for an action
+from datetime import datetime
+current_datetime = datetime.now()
+f_date = current_datetime.strftime("%Y-%m-%d")  #formatted current date
+priority_order = {"high": 1, "medium": 2, "low": 3}
+
+# Initialize an empty list to store tasks
+to_do_list = []
+
+
 def menu():
     while True:
         print("Advanced To-Do List Application")
@@ -28,13 +37,6 @@ def menu():
 
 # To-Do List Application
 #<<1>>
-from datetime import datetime
-current_datetime = datetime.now()
-f_date = current_datetime.strftime("%Y-%m-%d")  #formatted current date
-
-# Initialize an empty list to store tasks
-to_do_list = []
-
 def add_task():
     while True:
         task = input("Enter the task: ").strip()
@@ -138,7 +140,14 @@ def view_tasks():
 
 def suggest_tasks():
     print("Good afternoon! Here are some tasks you might want to work on: ")
-    for idx, k in enumerate(to_do_list, 1):
+
+    # Sort tasks based on priority and deadline
+    sorted_tasks = sorted(
+        to_do_list,
+        key=lambda x: (priority_order[x["priority"]], datetime.strptime(x["deadline"], "%Y-%m-%d"))
+    )
+        
+    for idx, k in enumerate(sorted_tasks, 1):
         print(f"{idx}. {k["task"]} - {k["priority"]} - {k["deadline"]}")
     print()
 # Run the to-do list application
