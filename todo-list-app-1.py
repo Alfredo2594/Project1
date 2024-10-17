@@ -87,3 +87,6 @@ def view_tasks():
 # Run the to-do list application
 if __name__ == "__main__":
     menu()
+
+#https://www.youtube.com/watch?v=3DZOWCFBTaE
+#https://medium.com/@joshikomal584/building-a-simple-to-do-list-application-in-python-8ce2409715d5
