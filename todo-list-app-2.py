@@ -107,7 +107,7 @@ def remove_task():
                 if k["task"].lower() == removed_task.lower():   # case insensitive
                     to_do_list.remove(k)
                     print(f"'{removed_task}' has been removed from the list")
-                    break
+                    return
 
             else:
                 print("Task not found in the list. Please enter a valid task\n")
