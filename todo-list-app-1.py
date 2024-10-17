@@ -45,7 +45,7 @@ def menu():
 to_do_list = []
 # Function to add a task to the list
 def add_task():
-    task = input("Enter the task or type N to back to the main menu: ")
+    task = input("Enter the task (or type 'N' to go back to the menu): ")
     to_do_list.append(task)
     if task.lower() == 'n':
         print("\nReturning to main menu.")
